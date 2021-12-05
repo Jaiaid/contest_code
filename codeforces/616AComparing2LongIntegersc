@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<string.h>
+
+#define MAXSIZE 1000000
+
+int main()
+{
+	char num1[MAXSIZE+1],num2[MAXSIZE+1];
+	int l,l1,tmp,tmp1;
+	
+	while(2==scanf("%s%s",num1,num2))
+	{
+		for(l=0;num1[l]=='0';l++);
+		for(l1=0;num2[l1]=='0';l1++);
+		
+		tmp=strlen(num1)-l;
+		tmp1=strlen(num2)-l1;
+		
+		if(tmp==tmp1){			
+			for(;num1[l] && num1[l]==num2[l1];l++,l1++);
+			
+			if(!num1[l]) puts("=");
+			else if(num1[l]>num2[l1]) puts(">");
+			else puts("<");
+		}
+		else{
+			if(tmp>tmp1) puts(">");
+			else puts("<");
+		}
+	}
+	
+	return 0;
+}

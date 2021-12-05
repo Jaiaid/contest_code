@@ -1,0 +1,8 @@
+I know nothing.
+
+This program is written in visual basic(most probably)
+
+Disassembly shows that a "je" instruction control the display of "success" message and answer with it. The instruction is at
+0x407163 of analysis.txt. Using hex editor and instruction hex code, it is found in app8win.exe. Then those instruction is replaced
+with 6 "nop"(0x90).
+

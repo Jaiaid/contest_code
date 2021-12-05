@@ -1,0 +1,8 @@
+Run the solution.cpp program in same folder it will change app6win.exe content
+
+objdump -D app6win.exe
+
+at .text section at instruction 0x4010e0,0x4010d9 the password is pushed in sequentially [ebp-0xc], [ebp-0x10] as 32bit portions.
+the portions are magi, cal(LF), initial part of string is always at lower address. While converting from 32bit Hex number to String, it should 
+be seen if machine is Little Endian.  
+ 

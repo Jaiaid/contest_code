@@ -1,0 +1,6 @@
+objdump -D app5win.exe
+
+at the first of the .text section the password is pushed in sequentially [ebp-0xc], [ebp-0x10], [ebp-0x14], [ebp-0x18] as 32bit portions.
+the portions are powe, rtri, ppin, g(LF). initial part of string is always at lower address. While converting from 32bit Hex number to String, it should 
+be seen if machine is Little Endian.  
+ 

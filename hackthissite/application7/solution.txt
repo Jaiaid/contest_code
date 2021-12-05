@@ -1,0 +1,25 @@
+This program takes an input and add ascii value of each character including LF(0xa) at variable a at -0x1c(%ebp) at main
+
+a variable b is at -0x18(%ebp) at main which is initialized at 0
+
+determine key value b:
+
+1.b=0
+2.read initial 5 character from encrypted.enc
+3.b=(a^(buf[0]&0xff))+(a^(buf[1]&0xff))+(a^(buf[2]&0xff))+(a^(buf[3]&0xff))+(a^(buf[4]&0xff))
+4.if b==0xdca/3530 accept and show actual password
+
+********************************************************************
+b==0xdca if a==753
+
+So, to make the input accepted it has to be something which's character's ascii value sum is 743==(753-0xa)
+
+Here, we used '00000000000000G'. At accepted input the answer will be given.
+
+Note:
+Changing, initialize value of b at something other than 0 and then input password to make b==0xdca won't work.
+The program make some transformation on 5 initial character from encrypted.enc using variable a. So, variable a 
+must be equal 753. Input should be done accordingly.
+
+Analysis of code is in 'analysis.txt'.
+'temp.cpp' finds the neccesary value of variable a.
